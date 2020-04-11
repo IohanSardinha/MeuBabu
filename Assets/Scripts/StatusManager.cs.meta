@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 861bb5ad70fb93040aeac5ea18160a3e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - energyImage: {instanceID: 0}
+  - hygieneImage: {instanceID: 0}
+  - hungerImage: {instanceID: 0}
+  - happinessImage: {instanceID: 0}
+  - status: {instanceID: 0}
+  - happySprite: {fileID: 21300000, guid: 71a416c5f31bad84ab80c537601eb8fc, type: 3}
+  - mediumHapinessSprite: {fileID: 21300000, guid: 6a5af1cd22076984d94a2b8507ac6da6,
+      type: 3}
+  - almostSadSprite: {fileID: 21300000, guid: 655d6ceee42345947b90ea76e3c53112, type: 3}
+  - sadSprite: {fileID: 21300000, guid: 3164fd5669a682647a6ce20b157d0d8c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
