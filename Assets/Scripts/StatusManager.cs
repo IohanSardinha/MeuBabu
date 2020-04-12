@@ -7,12 +7,14 @@ using UnityEngine.UI;
 public class StatusManager : MonoBehaviour
 {
     private static float TIME_FACTOR = 0.1f;
-    private static float SLEEPING_FACTOR = 2f;
+    private static float SLEEPING_FACTOR = 5f;
 
     private bool showering = false;
     private bool changing_clothes = false;
     public bool choosing_game = false;
     private int food_count = 0;
+    private float speechBoubleTime = 0;
+    private bool speechBoubleShowing = false;
 
     public Image energyImage,hygieneImage,hungerImage,happinessImage;
     public Status status;
@@ -23,6 +25,8 @@ public class StatusManager : MonoBehaviour
     public GameObject foodPrefab, foodSpawn;
     public GameObject wardrobe;
     public GameObject games;
+    public GameObject speechBouble;
+    public Text speechBoubleText;
     private GameObject shower;
 
     public int Food_count { get => food_count; set => food_count = value; }
@@ -40,8 +44,26 @@ public class StatusManager : MonoBehaviour
         babu.GetComponent<Animator>().enabled = !status.Sleeping;
     }
 
+    public void startScene(string scene)
+    {
+
+        SceneManager.LoadScene(scene);
+    }
+
+    private void showScpeechBouble(string text)
+    {
+        speechBoubleText.text = text;
+        speechBouble.SetActive(true);
+        speechBoubleShowing = true;
+    }
+
     public void chooseGame()
     {
+        if (status.Energy <= 0)
+        {
+            showScpeechBouble("Tô muito cansado pra brincar agora");
+            return;
+        }
         if (status.Sleeping) return;
         disableWardrobe();
         games.SetActive(true);
@@ -59,13 +81,23 @@ public class StatusManager : MonoBehaviour
 
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(choosing_game)
             {
                 games.SetActive(false);
                 choosing_game = false;
+            }
+        }
+
+        if(speechBoubleShowing)
+        {
+            speechBoubleTime += Time.deltaTime;
+            if(speechBoubleTime >= 5)
+            {
+                speechBoubleTime = 0;
+                speechBoubleShowing = false;
+                speechBouble.SetActive(false);
             }
         }
 
@@ -106,8 +138,14 @@ public class StatusManager : MonoBehaviour
             status.Hunger += factor; if (status.Hunger > 100) status.Hunger = 100;
             status.Happiness -= factor; if (status.Happiness < 0) status.Happiness = 0;
             status.Hygiene -= factor; if (status.Hygiene < 0) status.Hygiene = 0;
+
+            if (status.Energy < 10 && !speechBoubleShowing) showScpeechBouble("Que sono cara...");
+            else if (status.Hunger > 90 && !speechBoubleShowing) showScpeechBouble("Mó fome");
+            else if (status.Happiness < 10 && !speechBoubleShowing) showScpeechBouble("Vamos brincar?!");
+            else if(status.Hygiene < 10 && !speechBoubleShowing) showScpeechBouble("Tô muito sujo mermão");
         }
         
+
     }
 
     public void toggleWardrobe()
@@ -190,16 +228,6 @@ public class StatusManager : MonoBehaviour
         if (status.Energy > 100) status.Energy = 100;
     }
 
-    public void rechargeHappines(float amout)
-    {
-        if (status.Sleeping) return;
-        status.Happiness += amout; if (status.Happiness > 100) status.Happiness = 100;
-        status.Energy -= amout / 2; if (status.Energy < 0) status.Energy = 0;
-        status.Hygiene -= amout / 2; if (status.Hygiene < 0) status.Hygiene = 0;
-        status.Hunger += amout / 2; if (status.Hunger > 100) status.Hunger = 100;
-
-        SceneManager.LoadScene("WackTheMole");
-    }
 
     public void reduceHunger(float amout)
     {

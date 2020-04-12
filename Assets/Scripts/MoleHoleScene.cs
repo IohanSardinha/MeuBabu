@@ -38,6 +38,7 @@ public class MoleHoleScene : MonoBehaviour
                     game_over_text.text = "Racistas mortos\n" + kill_cout.ToString() + 
                         "\nMaior pontuação\n"+status.WackScore.ToString();
                 }
+                status.rechargeHappines(kill_cout*5);
             }
         }
     }

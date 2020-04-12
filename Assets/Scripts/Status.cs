@@ -90,6 +90,14 @@ public class Status : MonoBehaviour
         Hygiene -= factor;
     }
 
+    public void rechargeHappines(float amout)
+    {
+        Happiness += amout; if (Happiness > 100) Happiness = 100;
+        Energy -= amout / 2; if (Energy < 0) Energy = 0;
+        Hygiene -= amout / 2; if (Hygiene < 0) Hygiene = 0;
+        Hunger += amout / 2; if (Hunger > 100) Hunger = 100;
+    }
+
     void OnApplicationQuit()
     {
         SaveFile();

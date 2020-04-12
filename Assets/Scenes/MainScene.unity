@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861bb5ad70fb93040aeac5ea18160a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  choosing_game: 0
   energyImage: {fileID: 1977600560}
   hygieneImage: {fileID: 1511877498}
   hungerImage: {fileID: 1092760171}
@@ -900,6 +901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusM: {fileID: 519420030}
   status: {fileID: 2082315025}
+  wardrobe: {fileID: 1216807529}
 --- !u!114 &1092760171 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 985852619, guid: 39afde2c77ca3364980e855b7dd8d4bd,
@@ -918,6 +920,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6776037835408967377}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1216807529 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1216807529, guid: 39afde2c77ca3364980e855b7dd8d4bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 6776037835408967377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216807527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0bea91b7fd0874892a04eaa05041db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1511877498 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1750224635, guid: 39afde2c77ca3364980e855b7dd8d4bd,
@@ -1247,7 +1261,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1710347315}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 519420030}
+        m_MethodName: startScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: WackTheMole
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1710347315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6303,7 +6328,7 @@ PrefabInstance:
     - target: {fileID: 6776037835226980013, guid: 39afde2c77ca3364980e855b7dd8d4bd,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6776037835226980008, guid: 39afde2c77ca3364980e855b7dd8d4bd,
         type: 3}
@@ -6328,7 +6353,12 @@ PrefabInstance:
     - target: {fileID: 6776037836008419273, guid: 39afde2c77ca3364980e855b7dd8d4bd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: rechargeHappines
+      value: chooseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776037836008419273, guid: 39afde2c77ca3364980e855b7dd8d4bd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6776037835187420959, guid: 39afde2c77ca3364980e855b7dd8d4bd,
         type: 3}
@@ -6388,6 +6418,14 @@ PrefabInstance:
       propertyPath: babu
       value: 
       objectReference: {fileID: 1047394086}
+    - target: {fileID: 819794258, guid: 39afde2c77ca3364980e855b7dd8d4bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5541
+      objectReference: {fileID: 0}
+    - target: {fileID: 317733740, guid: 39afde2c77ca3364980e855b7dd8d4bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5541
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6776037835226980008, guid: 39afde2c77ca3364980e855b7dd8d4bd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 39afde2c77ca3364980e855b7dd8d4bd, type: 3}
