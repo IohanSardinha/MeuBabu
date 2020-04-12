@@ -9,6 +9,7 @@ public class Food : MonoBehaviour
     private float startPosY;
     private bool held;
     private float freed_time = 0;
+    private StatusManager statusM;
     private Status status;
     public List<Sprite> foods;
     public GameObject desapearFreed, desapearEaten;
@@ -18,8 +19,9 @@ public class Food : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = foods[Random.Range(0, foods.Count)];
     }
 
-    public void setStatus(Status status)
+    public void setStatus(StatusManager statusM, Status status)
     {
+        this.statusM = statusM;
         this.status = status;
     }
 
@@ -27,6 +29,12 @@ public class Food : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (status.Sleeping || statusM.choosing_game)
+        {
+            statusM.Food_count--;
+            Instantiate(desapearFreed, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
         if (held)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -38,19 +46,20 @@ public class Food : MonoBehaviour
             freed_time += Time.deltaTime;
             if (freed_time > 3)
             {
-                status.Food_count--;
+                statusM.Food_count--;
                 Instantiate(desapearFreed, transform.position, transform.rotation);
                 Destroy(this.gameObject);
             }
         }
     }
 
+
     private void OnMouseDown()
     {
         if (Input.GetMouseButton(0))
         {
             held = true;
-            status.disableWardrobe();
+            statusM.disableWardrobe();
         }
     }
 
@@ -62,8 +71,8 @@ public class Food : MonoBehaviour
             transform.localScale -= Vector3.one * Time.deltaTime * 0.25f;
             if (transform.localScale.x < 0.1)
             {
-                status.reduceHunger(25);
-                status.Food_count--;
+                statusM.reduceHunger(25);
+                statusM.Food_count--;
                 Instantiate(desapearEaten, transform.position, transform.rotation);
                 Destroy(gameObject);
             }

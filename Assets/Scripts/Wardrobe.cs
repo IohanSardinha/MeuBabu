@@ -13,7 +13,7 @@ public class Wardrobe : MonoBehaviour
     private int curr;
     private float inactive_time = 0;
 
-    private void Start()
+    private void Awake()
     {
         curr = skins.IndexOf(status.Skin);
         changeSkin(0);
@@ -23,6 +23,7 @@ public class Wardrobe : MonoBehaviour
     {
         inactive_time = 0;
         curr = (curr + n) % skins.Count;
+        if (curr < 0) curr = skins.Count + curr;
         status.Skin = skins[curr];
         int nex = (curr + 1) % skins.Count;
         if (nex < 0) nex = skins.Count + nex;

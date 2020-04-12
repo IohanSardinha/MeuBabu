@@ -9,12 +9,14 @@ public class Choveiro : MonoBehaviour
     private float startPosY;
     private bool held;
     private float freed_time = 0;
+    private StatusManager statusM;
     private Status status;
     private GameObject spawn;
     public GameObject desapear;
 
-    public void setStatus(Status status)
+    public void setStatus(StatusManager statusM, Status status)
     {
+        this.statusM = statusM;
         this.status = status;
     }
 
@@ -38,7 +40,7 @@ public class Choveiro : MonoBehaviour
             if(freed_time > 1.5)
             {
                 spawn.transform.position = this.transform.position;
-                status.Showering = false;
+                statusM.Showering = false;
                 Destroy(this.gameObject);
             }
         }
@@ -54,7 +56,7 @@ public class Choveiro : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             held = true;
-            status.disableWardrobe();
+            statusM.disableWardrobe();
         }
     }
 

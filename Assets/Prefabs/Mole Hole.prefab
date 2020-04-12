@@ -277,14 +277,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5227761915ad76f43ab3d1cfd33b9007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMaster: {fileID: 0}
   target: {fileID: 8142535648505511334}
   fire: {fileID: 6910611263253807806, guid: d5d60d3458f6b0148b1024f2a1324875, type: 3}
   racists:
   - {fileID: 21300000, guid: b49231c36895dae448181e883f972174, type: 3}
+  - {fileID: 21300000, guid: 45e9bd115e451ae4fa76927071ff9da9, type: 3}
+  - {fileID: 21300000, guid: 5664c334e6e450147a47258a434eb054, type: 3}
   people:
   - {fileID: 21300000, guid: f059d54c85bbf6f458a35468c2f60822, type: 3}
+  - {fileID: 21300000, guid: 808658d01e2db45478ad3bdce0ae1b13, type: 3}
+  - {fileID: 21300000, guid: 1c097de6d4be7e64eaaf3e38aa8ee14f, type: 3}
+  - {fileID: 21300000, guid: b635730df938bbc40a5a208efa1149d3, type: 3}
   racist: 0
-  lives: []
 --- !u!58 &5993534664180102020
 CircleCollider2D:
   m_ObjectHideFlags: 0

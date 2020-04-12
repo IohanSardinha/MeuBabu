@@ -8,7 +8,6 @@ public class MoleHoleObject : MonoBehaviour
 
     public MoleHoleScene gameMaster;
     private bool open = false;
-    private bool missed = false;
     private float open_time = 3f;
     private float closed_time;
     private float open_time_count = 0;
@@ -51,30 +50,31 @@ public class MoleHoleObject : MonoBehaviour
 
     void Update()
     {
-        if(!gameMaster.playing)
+        if (gameMaster.paused) {}
+        else if (!gameMaster.playing)
         {
             setOpen(false);
         }
-        else if(open)
+        else if (open)
         {
             open_time_count += Time.deltaTime;
-            if(open_time_count >= open_time)//Close
+            if (open_time_count >= open_time)//Close
             {
                 setOpen(false);
                 open_time_count = 0;
-                if (racist) gameMaster.removeLife();
+                //if (racist) gameMaster.removeLife();
             }
         }
         else
         {
             closed_time_count += Time.deltaTime;
-            if(closed_time_count >= closed_time)//Open
-            { 
+            if (closed_time_count >= closed_time)//Open
+            {
                 setOpen(true);
                 closed_time_count = 0;
                 setTarget();
                 closed_range_init -= 0.1f; if (closed_range_init < 0) closed_range_init = 0f;
-                closed_range_end -= 0.12f; if (closed_range_end  < 0.5f) closed_range_end = 0.5f;
+                closed_range_end -= 0.12f; if (closed_range_end < 0.5f) closed_range_end = 0.5f;
                 open_time -= 0.2f; if (open_time < 1f) open_time = 1f;
                 closed_time = Random.Range(closed_range_init, closed_range_end);
             }

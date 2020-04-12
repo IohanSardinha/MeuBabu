@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class GameData
@@ -19,16 +20,18 @@ public class GameData
     public float hygiene;
     public Skin skin;
     public DateTime close_time;
+    public int wack_score;
 
-    public GameData(float hunger, float energy,bool sleeping, float happiness, float hygiene, Skin skin, DateTime close_time)
+    public GameData()
     {
-        this.hunger = hunger;
-        this.energy = energy;
-        this.sleeping = sleeping;
-        this.happiness = happiness;
-        this.hygiene = hygiene;
-        this.skin = skin;
-        this.close_time = close_time;
+        hunger = 0;
+        energy = 100;
+        sleeping = false;
+        happiness = 100;
+        hygiene = 100;
+        skin = Skin.Underwear;
+        close_time = DateTime.Now;
+        wack_score = 0;
     }
 }
 
