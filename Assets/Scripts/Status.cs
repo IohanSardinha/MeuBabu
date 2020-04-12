@@ -20,6 +20,8 @@ public class Status : MonoBehaviour
     public bool Sleeping { get => gameData.sleeping; set => gameData.sleeping = value; }
     public int WackScore { get => gameData.wack_score; set => gameData.wack_score = value; }
 
+    public int GlideScore { get => gameData.glide_score; set => gameData.glide_score= value; }
+
     private void Awake()
     {
         LoadFile();
@@ -92,13 +94,14 @@ public class Status : MonoBehaviour
 
     public void rechargeHappines(float amout)
     {
+        Debug.Log(amout);
         Happiness += amout; if (Happiness > 100) Happiness = 100;
         Energy -= amout / 2; if (Energy < 0) Energy = 0;
         Hygiene -= amout / 2; if (Hygiene < 0) Hygiene = 0;
         Hunger += amout / 2; if (Hunger > 100) Hunger = 100;
     }
 
-    void OnApplicationQuit()
+    private void OnApplicationPause(bool pause)
     {
         SaveFile();
     }

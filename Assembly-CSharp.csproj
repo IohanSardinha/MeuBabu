@@ -62,16 +62,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Babu.cs" />
-    <Compile Include="Assets\Scripts\Choveiro.cs" />
-    <Compile Include="Assets\Scripts\DestroyAfterAnimation.cs" />
-    <Compile Include="Assets\Scripts\Food.cs" />
     <Compile Include="Assets\Scripts\GameData.cs" />
-    <Compile Include="Assets\Scripts\MoleHoleObject.cs" />
-    <Compile Include="Assets\Scripts\MoleHoleScene.cs" />
+    <Compile Include="Assets\Scripts\Main\Babu.cs" />
+    <Compile Include="Assets\Scripts\Main\Choveiro.cs" />
+    <Compile Include="Assets\Scripts\Main\Food.cs" />
+    <Compile Include="Assets\Scripts\Main\StatusManager.cs" />
+    <Compile Include="Assets\Scripts\Main\Wardrobe.cs" />
+    <Compile Include="Assets\Scripts\Minigames\DestroyAfterAnimation.cs" />
+    <Compile Include="Assets\Scripts\Minigames\HangGliding\HangGlider.cs" />
+    <Compile Include="Assets\Scripts\Minigames\HangGliding\HangGlidingScene.cs" />
+    <Compile Include="Assets\Scripts\Minigames\RepeatingBackground.cs" />
+    <Compile Include="Assets\Scripts\Minigames\WackTheMole\MoleHoleObject.cs" />
+    <Compile Include="Assets\Scripts\Minigames\WackTheMole\MoleHoleScene.cs" />
     <Compile Include="Assets\Scripts\Status.cs" />
-    <Compile Include="Assets\Scripts\StatusManager.cs" />
-    <Compile Include="Assets\Scripts\Wardrobe.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/ioXsa/Documents/Meu Babu/Meu Babu/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

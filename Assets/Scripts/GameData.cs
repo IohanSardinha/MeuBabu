@@ -21,6 +21,7 @@ public class GameData
     public Skin skin;
     public DateTime close_time;
     public int wack_score;
+    public int glide_score;
 
     public GameData()
     {
@@ -32,6 +33,7 @@ public class GameData
         skin = Skin.Underwear;
         close_time = DateTime.Now;
         wack_score = 0;
+        glide_score = 0;
     }
 }
 
