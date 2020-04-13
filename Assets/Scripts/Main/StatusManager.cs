@@ -80,6 +80,12 @@ public class StatusManager : MonoBehaviour
         }
     }
 
+    public void closeGames()
+    {
+        games.SetActive(false);
+        choosing_game = false;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
