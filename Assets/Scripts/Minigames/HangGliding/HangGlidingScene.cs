@@ -100,7 +100,8 @@ public class HangGlidingScene : MonoBehaviour
 
     public void unpause()
     {
-        pausePanel.SetActive(true);
+        pausePanel.SetActive(false);
+        paused = false;
     }
 
     public void returnHome()
