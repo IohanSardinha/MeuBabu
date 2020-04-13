@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HangGliding.unity
     guid: 1f2492a1a19ee28428828e70e6743496
+  - enabled: 1
+    path: Assets/Scenes/DanceHero.unity
+    guid: 7f52503de9f920b468cf80729b12f23b
   m_configObjects: {}

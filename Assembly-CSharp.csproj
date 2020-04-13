@@ -63,16 +63,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameData.cs" />
+    <Compile Include="Assets\Scripts\ImageFade.cs" />
     <Compile Include="Assets\Scripts\Main\Babu.cs" />
     <Compile Include="Assets\Scripts\Main\Choveiro.cs" />
     <Compile Include="Assets\Scripts\Main\Food.cs" />
     <Compile Include="Assets\Scripts\Main\StatusManager.cs" />
     <Compile Include="Assets\Scripts\Main\Wardrobe.cs" />
+    <Compile Include="Assets\Scripts\Minigames\DanceHero\ButtonBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Minigames\DanceHero\CircleButton.cs" />
+    <Compile Include="Assets\Scripts\Minigames\DanceHero\DanceHeroScene.cs" />
+    <Compile Include="Assets\Scripts\Minigames\DanceHero\Shine.cs" />
     <Compile Include="Assets\Scripts\Minigames\DestroyAfterAnimation.cs" />
     <Compile Include="Assets\Scripts\Minigames\HangGliding\HangGlider.cs" />
     <Compile Include="Assets\Scripts\Minigames\HangGliding\HangGlidingScene.cs" />
     <Compile Include="Assets\Scripts\Minigames\RepeatingBackground.cs" />
+    <Compile Include="Assets\Scripts\Minigames\WackTheMole\MoleHoleClosed.cs" />
     <Compile Include="Assets\Scripts\Minigames\WackTheMole\MoleHoleObject.cs" />
+    <Compile Include="Assets\Scripts\Minigames\WackTheMole\MoleHoleOpened.cs" />
     <Compile Include="Assets\Scripts\Minigames\WackTheMole\MoleHoleScene.cs" />
     <Compile Include="Assets\Scripts\Status.cs" />
     <Reference Include="Unity.Timeline.Editor">

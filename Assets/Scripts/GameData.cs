@@ -22,6 +22,7 @@ public class GameData
     public DateTime close_time;
     public int wack_score;
     public int glide_score;
+    public int dance_score;
 
     public GameData()
     {
@@ -34,6 +35,7 @@ public class GameData
         close_time = DateTime.Now;
         wack_score = 0;
         glide_score = 0;
+        dance_score = 0;
     }
 }
 

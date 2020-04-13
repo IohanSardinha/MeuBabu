@@ -7,12 +7,12 @@ public class MoleHoleObject : MonoBehaviour
 {
 
     public MoleHoleScene gameMaster;
-    private bool open = false;
+    public bool open = false;
     private float open_time = 3f;
     private float closed_time;
     private float open_time_count = 0;
     private float closed_time_count = 0;
-    private float closed_range_init = 3f, closed_range_end = 5f;
+    private float closed_range_init = 3f, closed_range_end = 8f;
     private float racist_proportion = 0.3f;
     private Animator animator;
     public GameObject target;
@@ -44,8 +44,8 @@ public class MoleHoleObject : MonoBehaviour
 
     private void setOpen(bool o)
     {
-        open = o;
-        animator.SetBool("open", open);
+        //open = o;
+        animator.SetBool("open", o);
     }
 
     void Update()
@@ -73,8 +73,8 @@ public class MoleHoleObject : MonoBehaviour
                 setOpen(true);
                 closed_time_count = 0;
                 setTarget();
-                closed_range_init -= 0.1f; if (closed_range_init < 0) closed_range_init = 0f;
-                closed_range_end -= 0.12f; if (closed_range_end < 0.5f) closed_range_end = 0.5f;
+                closed_range_init -= 0.1f; if (closed_range_init < 0.8f) closed_range_init = 0.8f;
+                closed_range_end -= 0.12f; if (closed_range_end < 1f) closed_range_end = 1f;
                 open_time -= 0.2f; if (open_time < 1f) open_time = 1f;
                 closed_time = Random.Range(closed_range_init, closed_range_end);
             }

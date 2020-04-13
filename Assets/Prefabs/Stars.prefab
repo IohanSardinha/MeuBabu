@@ -113,5 +113,10 @@ PrefabInstance:
       propertyPath: InitialModule.gravityModifier.scalar
       value: -0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3475856354743294233, guid: a04e4cb14374e0a488b9b8d4b23fb8a5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a04e4cb14374e0a488b9b8d4b23fb8a5, type: 3}
