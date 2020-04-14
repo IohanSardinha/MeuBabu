@@ -21,7 +21,7 @@ public class Status : MonoBehaviour
     public int WackScore { get => gameData.wack_score; set => gameData.wack_score = value; }
     public int GlideScore { get => gameData.glide_score; set => gameData.glide_score= value; }
     public int DanceScore { get => gameData.dance_score; set => gameData.dance_score= value; }
-
+    public int KickScore { get => gameData.kick_score; set => gameData.kick_score = value; }
     private void Awake()
     {
         LoadFile();

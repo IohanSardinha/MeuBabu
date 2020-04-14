@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DanceHero.unity
     guid: 7f52503de9f920b468cf80729b12f23b
+  - enabled: 1
+    path: Assets/Scenes/KickUps.unity
+    guid: ec206a34dcdc0e04891054894678c86b
   m_configObjects: {}

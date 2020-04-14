@@ -38,8 +38,8 @@ public class DanceHeroScene : MonoBehaviour
     {
         nodes.Remove(node);
         Destroy(node);
-        if (perfect) { dancer.speed += 0.15f; life += 1; }
-        else { dancer.speed += 0.075f; life += 0.5f; }
+        if (perfect) { dancer.speed += 0.15f; life += 0.4f; }
+        else { dancer.speed += 0.075f; life += 0.2f; }
         if (dancer.speed > 5) dancer.speed = 5f;
         if (life > 12) life = 12;
     }
@@ -63,6 +63,7 @@ public class DanceHeroScene : MonoBehaviour
                 life -= 4f;
                 if(life <= 0)
                 {
+                    score_text.text = "";
                     game_over.SetActive(true);
                     if(score > status.DanceScore)
                     {
@@ -76,7 +77,7 @@ public class DanceHeroScene : MonoBehaviour
                         message_text.text = "Você perdeu";
                         message_text.fontSize = 40;
                         title_text.text = "Pontos\n" + Mathf.Ceil(score).ToString() +
-                            "\nMaior pontuação\n" + status.GlideScore.ToString();
+                            "\nMaior pontuação\n" + status.DanceScore.ToString();
                     }
                     status.rechargeHappines(score / 50);
                 }
@@ -122,13 +123,13 @@ public class DanceHeroScene : MonoBehaviour
                 nodes.Add(new_node);
                 buttons[index].nodes.Add(new_node);
                 time_till_next = Random.Range(bootom_range, up_range);
-                bootom_range -= 0.1f; if (bootom_range < 0.1) bootom_range = 0.1f;
-                up_range -= 0.05f; if (up_range < 1) up_range = 1f;
+                bootom_range -= 0.12f; if (bootom_range < 0.3) bootom_range = 0.3f;
+                up_range -= 0.06f; if (up_range < 0.5) up_range = 0.5f;
             }
             if (dancer.speed > 0) dancer.speed -= 0.01f * Time.deltaTime;
             score += dancer.speed * 20 * Time.deltaTime;
             score_text.text = Mathf.Ceil(score).ToString();
-            node_speed += 0.06f * Time.deltaTime; if (node_speed > 7) node_speed = 7;
+            node_speed += 0.12f * Time.deltaTime; if (node_speed > 7) node_speed = 7;
             moveNodes();
         }
         if (Input.GetKeyDown(KeyCode.Escape))

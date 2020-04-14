@@ -24,7 +24,8 @@ public class MoleHoleScene : MonoBehaviour
             {
                 playing = false;
                 gameOverPanel.SetActive(true);
-                if(status.WackScore < kill_cout)
+                score.text = "";
+                if (status.WackScore < kill_cout)
                 {
                     highscore_text.text = "Parabéns você bateu seu record!";
                     highscore_text.fontSize = 30;

@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\Minigames\DestroyAfterAnimation.cs" />
     <Compile Include="Assets\Scripts\Minigames\HangGliding\HangGlider.cs" />
     <Compile Include="Assets\Scripts\Minigames\HangGliding\HangGlidingScene.cs" />
+    <Compile Include="Assets\Scripts\Minigames\KickUps\KickUpScene.cs" />
     <Compile Include="Assets\Scripts\Minigames\RepeatingBackground.cs" />
     <Compile Include="Assets\Scripts\Minigames\WackTheMole\MoleHoleClosed.cs" />
     <Compile Include="Assets\Scripts\Minigames\WackTheMole\MoleHoleObject.cs" />

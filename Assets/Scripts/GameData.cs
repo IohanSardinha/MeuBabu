@@ -23,7 +23,7 @@ public class GameData
     public int wack_score;
     public int glide_score;
     public int dance_score;
-
+    public int kick_score;
     public GameData()
     {
         hunger = 0;
@@ -36,6 +36,7 @@ public class GameData
         wack_score = 0;
         glide_score = 0;
         dance_score = 0;
+        kick_score = 0;
     }
 }
 
