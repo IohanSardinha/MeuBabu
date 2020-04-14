@@ -1187,7 +1187,7 @@ MonoBehaviour:
   babu: {fileID: 1047394086}
   showerPrefab: {fileID: 3013068139301401627, guid: eef6fca97d5d03545bc81ea0ffc064d8,
     type: 3}
-  showerSpawn: {fileID: 0}
+  showerSpawn: {fileID: 1341094831}
   foodPrefab: {fileID: 3767579963437774533, guid: 01db3efe8bd7d654b9f51096c855fa9a,
     type: 3}
   foodSpawn: {fileID: 336806872}
@@ -2547,7 +2547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusM: {fileID: 519420030}
   status: {fileID: 2082315025}
-  wardrobe: {fileID: 0}
+  wardrobe: {fileID: 20287922}
 --- !u!1 &1114301989
 GameObject:
   m_ObjectHideFlags: 0

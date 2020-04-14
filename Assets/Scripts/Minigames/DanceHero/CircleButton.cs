@@ -16,7 +16,6 @@ public class CircleButton : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-
     public void removeNode(GameObject node)
     {
         if(nodes.Contains(node))
@@ -38,11 +37,11 @@ public class CircleButton : MonoBehaviour
             }
 
             float distance = Mathf.Abs(nodes[0].transform.position.y - transform.position.y);
-            if (distance > 1.2)
+            if (distance > 0.6)
             {
                 animator.SetInteger("ID", 2);
             }
-            else if (distance > 0.5)
+            else if (distance > 0.2)
             {
                 Instantiate(dust, nodes[0].transform.position, new Quaternion());
                 animator.SetInteger("ID", 3);

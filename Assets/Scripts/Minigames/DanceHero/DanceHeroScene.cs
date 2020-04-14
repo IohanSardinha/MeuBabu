@@ -129,7 +129,7 @@ public class DanceHeroScene : MonoBehaviour
             if (dancer.speed > 0) dancer.speed -= 0.01f * Time.deltaTime;
             score += dancer.speed * 20 * Time.deltaTime;
             score_text.text = Mathf.Ceil(score).ToString();
-            node_speed += 0.12f * Time.deltaTime; if (node_speed > 7) node_speed = 7;
+            node_speed += 0.1f * Time.deltaTime; if (node_speed > 7) node_speed = 7;
             moveNodes();
         }
         if (Input.GetKeyDown(KeyCode.Escape))
