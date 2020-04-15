@@ -8,7 +8,7 @@ public class HangGlidingScene : MonoBehaviour
 {
     public static float ACELERATION = 0.05f;
     public GameObject gameOverPanel, pausePanel;
-    public List<Sprite> obstacleSprites;
+    public List<GameObject> obstacleSprites;
     private List<GameObject> obstacles = new List<GameObject>();
     public GameObject obstaclePrefab;
     public GameObject hangGlider,particles;
@@ -17,7 +17,7 @@ public class HangGlidingScene : MonoBehaviour
     private float speed = 4;
     private float time_between_counter = 0, time_between = 1.5f;
     private float start_delay = 3f;
-    public RepeatingBackground background;
+    public RepeatingBackground background, background2, background3, background4;
     public Text score_text, message_text, title_text;
     public Status status;
     public float score = 0;
@@ -31,8 +31,7 @@ public class HangGlidingScene : MonoBehaviour
 
     private void AddObstacle()
     {
-        GameObject new_obstacle = Instantiate(obstaclePrefab);
-        new_obstacle.GetComponent<SpriteRenderer>().sprite = obstacleSprites[Random.Range(0, obstacleSprites.Count)];
+        GameObject new_obstacle = Instantiate(obstacleSprites[Random.Range(0, obstacleSprites.Count)]);
         Vector3 size = new_obstacle.GetComponent<SpriteRenderer>().bounds.size;
         new_obstacle.transform.position = new Vector3(bottomRight.x + size.x / 2,
                                                 Random.Range(bottomRight.y + size.y / 2,
@@ -62,7 +61,10 @@ public class HangGlidingScene : MonoBehaviour
             }
         }
         speed += ACELERATION * Time.deltaTime;
-        background.speed = speed * 0.75f;
+        background.speed = speed * 0.25f;
+        background2.speed = speed * 0.15f;
+        background3.speed = speed * 0.05f;
+        background4.speed = speed * 0.01f;
         score += speed * Time.deltaTime;
         score_text.text = Mathf.Ceil(score).ToString() + "m";
         float height = hangGlider.GetComponent<SpriteRenderer>().bounds.size.y;
@@ -71,6 +73,9 @@ public class HangGlidingScene : MonoBehaviour
             playing = false;
             particles.SetActive(false);
             background.speed = 0;
+            background2.speed = 0;
+            background3.speed = 0;
+            background4.speed = 0;
             gameOverPanel.SetActive(true);
             score_text.text = "";
 
@@ -133,8 +138,8 @@ public class HangGlidingScene : MonoBehaviour
             {
                 paused = !paused;
                 pausePanel.SetActive(!pausePanel.activeSelf);
-                if (paused) background.speed = 0;
-            }
+                if (paused) { background.speed = 0; background2.speed = 0; background3.speed = 0; background4.speed = 0; }
+                }
         }
     }
 }

@@ -6,7 +6,7 @@ public class HangGlider : MonoBehaviour
 {
 
     private static float GRAVITY = -9;
-    private static float UP_SPEED = 4;
+    private static float UP_SPEED = 9;
     private float velocity = 0;
     public HangGlidingScene gameMaster;
     float topCoordinate;
