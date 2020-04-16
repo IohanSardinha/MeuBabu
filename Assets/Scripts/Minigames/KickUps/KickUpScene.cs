@@ -54,8 +54,8 @@ public class KickUpScene : MonoBehaviour
             if (transform.position.y + height / 2 > babu.transform.position.y - babu_height / 2)
             {
                 babu.transform.position = new Vector3(transform.position.x, babu.transform.position.y);
-                if (transform.position.x > middle_coords) babu.transform.localScale = new Vector3(1, 1, 1);
-                else babu.transform.localScale = new Vector3(-1, 1, 1);
+                if (transform.position.x > middle_coords) babu.transform.localScale = new Vector3(0.5f, 0.5f, 1);
+                else babu.transform.localScale = new Vector3(-0.5f, 0.5f, 1);
             }
             else
             {

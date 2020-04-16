@@ -110,10 +110,10 @@ TextureImporter:
       name: babu_vermelho_0
       rect:
         serializedVersion: 2
-        x: 76
-        y: 601
-        width: 145
-        height: 299
+        x: 87
+        y: 4
+        width: 339
+        height: 595
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,50 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aec80d7eebf35f847bc60d4063c6f6f7
+      spriteID: 698e2ff0d38477641b1f3552c99b9df7
       internalID: 3057907088482347764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: babu_vermelho_1
-      rect:
-        serializedVersion: 2
-        x: 376
-        y: 602
-        width: 145
-        height: 279
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d484d98e90c1f84798fb3e2999f31fd
-      internalID: 3538109017825894516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: babu_vermelho_2
-      rect:
-        serializedVersion: 2
-        x: 676
-        y: 601
-        width: 145
-        height: 299
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4e75917265feac4280b70745cc0ac43
-      internalID: -8535033483711048829
       vertices: []
       indices: 
       edges: []

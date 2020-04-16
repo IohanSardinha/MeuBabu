@@ -110,10 +110,10 @@ TextureImporter:
       name: babu_branco_0
       rect:
         serializedVersion: 2
-        x: 70
-        y: 601
-        width: 151
-        height: 299
+        x: 270
+        y: 6
+        width: 351
+        height: 634
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,50 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a896f02bd03648489a8dac9fd746129
+      spriteID: 7b2a73a1702157745a912709b24280fc
       internalID: 7656734534876586635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: babu_branco_1
-      rect:
-        serializedVersion: 2
-        x: 367
-        y: 602
-        width: 154
-        height: 291
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed4e95d92326b6f45af0652ca1a7f3d5
-      internalID: 4426285731929957295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: babu_branco_2
-      rect:
-        serializedVersion: 2
-        x: 673
-        y: 601
-        width: 148
-        height: 299
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5869526dd0aa0f442b62f29fb20860cf
-      internalID: 7784622826244231391
       vertices: []
       indices: 
       edges: []

@@ -11,6 +11,21 @@ TextureImporter:
   - first:
       213: -1455035479569849005
     second: babu_parado_2
+  - first:
+      213: 2452230099211595302
+    second: babu_parado_3
+  - first:
+      213: 5315823342843884985
+    second: babu_parado_4
+  - first:
+      213: -2133175059387818005
+    second: babu_parado_5
+  - first:
+      213: -2849550933905525840
+    second: babu_parado_6
+  - first:
+      213: -180332237686258011
+    second: babu_parado_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,40 +125,19 @@ TextureImporter:
       name: babu_parado_0
       rect:
         serializedVersion: 2
-        x: 76
-        y: 1
-        width: 145
-        height: 299
+        x: 0
+        y: 0
+        width: 264
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0150d3eb04ebc7d4699080f5a7266f42
+      spriteID: 3ffd18ed2876b5748ab72d42833d345b
       internalID: -5170243316941927684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: babu_parado_1
-      rect:
-        serializedVersion: 2
-        x: 376
-        y: 2
-        width: 145
-        height: 279
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34d04e20ca0a4e743859ee7c91632f7a
-      internalID: 383424452813005384
       vertices: []
       indices: 
       edges: []
@@ -152,19 +146,103 @@ TextureImporter:
       name: babu_parado_2
       rect:
         serializedVersion: 2
-        x: 676
-        y: 1
-        width: 145
-        height: 299
+        x: 297
+        y: 0
+        width: 266
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f355cdbd6144fe43b372ee77a5a3c63
+      spriteID: a94250a798f78ed4f903a9be530df27e
       internalID: -1455035479569849005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: babu_parado_3
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 0
+        width: 335
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d61c23d7269a147ab416fab5ba2849
+      internalID: 2452230099211595302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: babu_parado_4
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 0
+        width: 400
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6ee0afdbbc977478aeffe963fbebd9
+      internalID: 5315823342843884985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: babu_parado_5
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 0
+        width: 474
+        height: 600
+      alignment: 9
+      pivot: {x: 0.51244473, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78afe7ca5b7f3446a4634ac1f29c86f
+      internalID: -2133175059387818005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: babu_parado_6
+      rect:
+        serializedVersion: 2
+        x: 1862
+        y: 0
+        width: 527
+        height: 600
+      alignment: 9
+      pivot: {x: 0.51865524, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f9eef551cd399489e3b090e6ec7ae6
+      internalID: -2849550933905525840
       vertices: []
       indices: 
       edges: []
