@@ -5,7 +5,7 @@ Neste jogo você pode ter seu próprio pet babu, alimentá-lo, dar banho, e brin
 
 O jogo ainda encontra-se em etapa de desenvolvimento, porém já é possível jogar sua versão beta:
 
-[Download versão para Android](bit.ly/MeuBabuApk)
+[Download versão para Android](https://github.com/IohanSardinha/MeuBabu/blob/master/meubabu.apk?raw=true)
 
 Também está disponível uma versão para Web, para usuários de IPhone ou quem não tenha espaço no telefone para baixar:
 
