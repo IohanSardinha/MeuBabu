@@ -1,2 +1,18 @@
 .vs
 Temp/
+Meu Babu-Web
+index.html
+Library/
+Logs/
+obj/
+ProjectSettings/
+Assembly-CSharp.csproj
+Meu Babu.csproj
+Meu Babu.sln
+Unity.CollabProxy.Editor.csproj
+Unity.Rider.Editor.csproj
+Unity.TextMeshPro.csproj
+Unity.TextMeshPro.Editor.csproj
+Unity.VSCode.Editor.csproj
+UnityEditor.TestRunner.csproj
+UnityEngine.TestRunner.csproj
