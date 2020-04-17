@@ -8,7 +8,7 @@ public class Settings : MonoBehaviour
 {
 
     public Status status;
-    public GameObject settings;
+    public GameObject settings, loading;
     public List<AudioSource> musics;
     public List<AudioSource> sfxs;
     public Toggle sfx_T, music_T;
@@ -35,6 +35,12 @@ public class Settings : MonoBehaviour
             sfx.volume = status.SFXVolume;
         }
     }
+
+    public void ShowLoading()
+    {
+        loading.SetActive(true);
+    }
+
     public void ToggleSettings()
     {
         settings.SetActive(!settings.activeSelf);

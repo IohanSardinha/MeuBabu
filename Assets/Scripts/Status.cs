@@ -29,6 +29,7 @@ public class Status : MonoBehaviour
     public float MusicVolume { get => gameData.music_volume; set => gameData.music_volume = value; }
     private void Awake()
     {
+        gameData = new GameData();
         LoadFile();
     }
 
