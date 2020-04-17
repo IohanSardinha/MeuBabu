@@ -19,6 +19,7 @@ public class KickUpScene : MonoBehaviour
     private bool playing = true, paused = false;
     public Status status;
     public GameObject game_over, pausePanel;
+    public AudioSource ballhit;
 
     void Start()
     {
@@ -112,6 +113,7 @@ public class KickUpScene : MonoBehaviour
         if (start_delay > 0) return;
         if (Input.GetMouseButtonDown(0) && transform.position.y < babu.transform.position.y + babu_height/3 && transform.position.y > babu.transform.position.y - babu_height / 2)
         {
+            ballhit.Play();
             velocity.y = BOUNCE;
             Vector3 distance_vector = new Vector3(transform.position.x, transform.position.y + height / 2) - Camera.main.ScreenToWorldPoint(Input.mousePosition);
             float force = Mathf.Sin(Mathf.Atan(distance_vector.x / distance_vector.y)) * FORCE_MULTIPLYER;

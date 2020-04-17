@@ -125,19 +125,40 @@ TextureImporter:
       name: babu_parado_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
         width: 264
         height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ffd18ed2876b5748ab72d42833d345b
+      spriteID: b6985e1b9038e174185820f3226db512
       internalID: -5170243316941927684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: babu_parado_1
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 406
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aac41163760a514ba214000d281c1c2
+      internalID: 383424452813005384
       vertices: []
       indices: 
       edges: []
@@ -151,13 +172,13 @@ TextureImporter:
         width: 266
         height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a94250a798f78ed4f903a9be530df27e
+      spriteID: 6c307baf5031854408798294dfb2495b
       internalID: -1455035479569849005
       vertices: []
       indices: 
@@ -172,13 +193,13 @@ TextureImporter:
         width: 335
         height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6d61c23d7269a147ab416fab5ba2849
+      spriteID: 5570a7fd64ad6bb48a9e022de472325f
       internalID: 2452230099211595302
       vertices: []
       indices: 
@@ -193,13 +214,13 @@ TextureImporter:
         width: 400
         height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd6ee0afdbbc977478aeffe963fbebd9
+      spriteID: 7c689057704d2694498ca8e4d5aa7d3b
       internalID: 5315823342843884985
       vertices: []
       indices: 
@@ -213,14 +234,14 @@ TextureImporter:
         y: 0
         width: 474
         height: 600
-      alignment: 9
-      pivot: {x: 0.51244473, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a78afe7ca5b7f3446a4634ac1f29c86f
+      spriteID: 17bb91ea700b23f4baaa274b1504418c
       internalID: -2133175059387818005
       vertices: []
       indices: 
@@ -234,15 +255,36 @@ TextureImporter:
         y: 0
         width: 527
         height: 600
-      alignment: 9
-      pivot: {x: 0.51865524, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61f9eef551cd399489e3b090e6ec7ae6
+      spriteID: 66a1771ad4a2ca84abf4466812841cb4
       internalID: -2849550933905525840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: babu_parado_7
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 396
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36caab5698588b4db54db4073b48746
+      internalID: -180332237686258011
       vertices: []
       indices: 
       edges: []

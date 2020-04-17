@@ -12,6 +12,7 @@ public class HangGlider : MonoBehaviour
     float topCoordinate;
     private bool gliding = true;
     public GameObject explosion;
+    public AudioSource crash;
 
     private void Awake()
     {
@@ -24,17 +25,18 @@ public class HangGlider : MonoBehaviour
         if (!gameMaster.playing || gameMaster.paused) return;
         if((Input.GetMouseButtonDown(0) || Input.GetMouseButtonUp(0)) && gliding)
         {
-            velocity = 0;
+            velocity = 5;
         }
-        else if (Input.GetMouseButton(0) && gliding)
+        /*else if (Input.GetMouseButton(0) && gliding)
         {
             velocity += UP_SPEED * Time.deltaTime;
             if (transform.rotation.eulerAngles.z < 270+45) transform.Rotate(0, 0, 1);
-        }
+        }*/
         else
         {
             velocity += GRAVITY*Time.deltaTime;
-            if (transform.rotation.eulerAngles.z > 270-45) transform.Rotate(0, 0, -0.5f);
+            if (velocity < 0 && transform.rotation.eulerAngles.z > 270-45) transform.Rotate(0, 0, -0.5f);
+            if (velocity > 0 && transform.rotation.eulerAngles.z < 270 + 45) transform.Rotate(0, 0, 1);
         }
         Vector3 old_pos = transform.position;
         Vector3 size = GetComponent<SpriteRenderer>().bounds.size;
@@ -51,6 +53,7 @@ public class HangGlider : MonoBehaviour
             velocity = 0;
             Instantiate(explosion, collision.gameObject.transform.position, new Quaternion());
             Destroy(collision.gameObject);
+            crash.Play();
         }
     }
 }

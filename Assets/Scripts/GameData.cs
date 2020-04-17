@@ -24,6 +24,11 @@ public class GameData
     public int glide_score;
     public int dance_score;
     public int kick_score;
+    public bool sfx;
+    public bool music;
+    public float sfx_volume;
+    public float music_volume;
+
     public GameData()
     {
         hunger = 0;
@@ -37,6 +42,10 @@ public class GameData
         glide_score = 0;
         dance_score = 0;
         kick_score = 0;
+        sfx = true;
+        music = true;
+        sfx_volume = 1;
+        music_volume = 0.5f;
     }
 }
 

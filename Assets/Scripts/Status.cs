@@ -22,6 +22,11 @@ public class Status : MonoBehaviour
     public int GlideScore { get => gameData.glide_score; set => gameData.glide_score= value; }
     public int DanceScore { get => gameData.dance_score; set => gameData.dance_score= value; }
     public int KickScore { get => gameData.kick_score; set => gameData.kick_score = value; }
+
+    public bool SFX { get => gameData.sfx; set => gameData.sfx = value; }
+    public bool Music { get => gameData.music; set => gameData.music = value; }
+    public float SFXVolume { get => gameData.sfx_volume; set => gameData.sfx_volume = value; }
+    public float MusicVolume { get => gameData.music_volume; set => gameData.music_volume = value; }
     private void Awake()
     {
         LoadFile();
@@ -32,7 +37,7 @@ public class Status : MonoBehaviour
         SaveFile();
     }
 
-    private void SaveFile()
+    public void SaveFile()
     {
         string destination = Application.persistentDataPath + "/save.dat";
         FileStream file;

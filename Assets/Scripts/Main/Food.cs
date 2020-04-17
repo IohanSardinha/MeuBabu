@@ -34,6 +34,7 @@ public class Food : MonoBehaviour
             statusM.Food_count--;
             Instantiate(desapearFreed, transform.position, transform.rotation);
             Destroy(this.gameObject);
+            statusM.desapear.Play();
         }
         if (held)
         {
@@ -49,6 +50,7 @@ public class Food : MonoBehaviour
                 statusM.Food_count--;
                 Instantiate(desapearFreed, transform.position, transform.rotation);
                 Destroy(this.gameObject);
+                statusM.desapear.Play();
             }
         }
     }
@@ -68,6 +70,7 @@ public class Food : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Rosto"))
         {
+            if (!statusM.eating.isPlaying) statusM.eating.Play();
             transform.localScale -= Vector3.one * Time.deltaTime * 0.25f;
             if (transform.localScale.x < 0.1)
             {
@@ -75,6 +78,7 @@ public class Food : MonoBehaviour
                 statusM.Food_count--;
                 Instantiate(desapearEaten, transform.position, transform.rotation);
                 Destroy(gameObject);
+                statusM.sparkle.Play();
             }
         }
     }

@@ -103,6 +103,10 @@ MonoBehaviour:
     type: 3}
   desapearEaten: {fileID: 8658400648360907414, guid: cebfe71b8664125478cb3305b4633c8e,
     type: 3}
+  eating: {fileID: 5730780622676866079, guid: ff36178042122ab4eb63c449df873a9f, type: 3}
+  sparkle: {fileID: 7141652766731553804, guid: b193318d9dfe8c84c869a7c03c7a5696, type: 3}
+  desapear: {fileID: 1800793817278420572, guid: 73a7c585a505b78438b34a574ac73f55,
+    type: 3}
 --- !u!58 &1511765125
 CircleCollider2D:
   m_ObjectHideFlags: 0

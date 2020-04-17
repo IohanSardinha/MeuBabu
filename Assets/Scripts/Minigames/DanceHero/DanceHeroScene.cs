@@ -27,6 +27,7 @@ public class DanceHeroScene : MonoBehaviour
     public Text title_text, message_text;
     public Status status;
     public bool paused = false;
+    public AudioSource wrong;
 
     private void Start()
     {
@@ -61,6 +62,7 @@ public class DanceHeroScene : MonoBehaviour
                 }
                 dancer.speed -= 2.5f; if (dancer.speed < 0) dancer.speed = 0;
                 life -= 4f;
+                wrong.Play();
                 if(life <= 0)
                 {
                     score_text.text = "";

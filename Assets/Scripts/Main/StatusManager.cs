@@ -28,6 +28,8 @@ public class StatusManager : MonoBehaviour
     public GameObject speechBouble;
     public Text speechBoubleText;
     private GameObject shower;
+    public AudioSource music, snoring;
+    public AudioSource eating, sparkle, desapear, showerAudio;
 
     public int Food_count { get => food_count; set => food_count = value; }
     public bool Showering { get => showering; set => showering = value; }
@@ -40,6 +42,8 @@ public class StatusManager : MonoBehaviour
         if (status.Sleeping)
         {
             babu.transform.Rotate(0, 0, 80);
+            music.Pause();
+            snoring.Play();
         }
         babu.GetComponent<Animator>().enabled = !status.Sleeping;
     }
@@ -160,11 +164,18 @@ public class StatusManager : MonoBehaviour
         if (status.Sleeping) return;
         changing_clothes = !changing_clothes;
         wardrobe.SetActive(!wardrobe.activeSelf);
+
+
+        status.SaveFile();
+
     }
 
     public void disableWardrobe()
     {
         if (changing_clothes) { wardrobe.SetActive(false); changing_clothes = false; }
+
+        status.SaveFile();
+
     }
 
     public void toggleSleep()
@@ -191,11 +202,17 @@ public class StatusManager : MonoBehaviour
                 showering = false;
             }
             babu.transform.Rotate(0, 0, 80);
+            music.Pause();
+            snoring.Play();
         }
         else
         {
+            music.UnPause();
+            snoring.Stop();
             babu.transform.Rotate(0, 0, -80);
         }
+
+        status.SaveFile();
 
     }
 
@@ -225,6 +242,9 @@ public class StatusManager : MonoBehaviour
         shower = Instantiate(showerPrefab, showerSpawn.transform.position, showerSpawn.transform.rotation);
         shower.GetComponent<Choveiro>().setStatus(this, status);
         shower.GetComponent<Choveiro>().setSpawn(showerSpawn);
+
+        status.SaveFile();
+
     }
 
     public void rechargeHygiene(float amout)
@@ -247,6 +267,9 @@ public class StatusManager : MonoBehaviour
         if (status.Sleeping) return;
         status.Hunger -= amout;
         if (status.Hunger < 0) status.Hunger = 0;
+
+        status.SaveFile();
+
     }
 
 }

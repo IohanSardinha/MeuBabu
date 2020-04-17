@@ -7,6 +7,8 @@ public class CircleButton : MonoBehaviour
     public DanceHeroScene gameMaster;
     public List<GameObject> nodes = new List<GameObject>();
     public GameObject stars, dust;
+    public List<AudioSource> notes;
+    public AudioSource wrong, almost;
 
     private Animator animator;
 
@@ -33,6 +35,7 @@ public class CircleButton : MonoBehaviour
             if (nodes.Count <= 0)
             {
                 animator.SetInteger("ID", 2);
+                wrong.Play();
                 return;
             }
 
@@ -40,11 +43,13 @@ public class CircleButton : MonoBehaviour
             if (distance > 0.6)
             {
                 animator.SetInteger("ID", 2);
+                wrong.Play();
             }
             else if (distance > 0.2)
             {
                 Instantiate(dust, nodes[0].transform.position, new Quaternion());
                 animator.SetInteger("ID", 3);
+                almost.Play();
                 gameMaster.removeNode(nodes[0],false);
                 nodes.RemoveAt(0);
             }
@@ -52,6 +57,7 @@ public class CircleButton : MonoBehaviour
             {
                 Instantiate(stars, nodes[0].transform.position, new Quaternion());
                 animator.SetInteger("ID", 1);
+                notes[Random.Range(0,notes.Count)].Play();
                 gameMaster.removeNode(nodes[0], true);
                 nodes.RemoveAt(0);
             }

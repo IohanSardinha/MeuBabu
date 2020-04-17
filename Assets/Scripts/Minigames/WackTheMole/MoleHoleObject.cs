@@ -20,6 +20,7 @@ public class MoleHoleObject : MonoBehaviour
     public List<Sprite> racists;
     public List<Sprite> people;
     public bool racist;
+    public AudioSource racistScream, Scream, Fire;
 
     private void Start()
     {
@@ -91,11 +92,15 @@ public class MoleHoleObject : MonoBehaviour
             if(!racist)
             {
                 gameMaster.removeLife();
+                Fire.Play();
+                Scream.Play();
             }
             if (racist)
             {
                 racist = false;
                 gameMaster.addKill();
+                Fire.Play();
+                racistScream.Play();
             }
         }
     }

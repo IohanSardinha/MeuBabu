@@ -14,6 +14,11 @@ public class Choveiro : MonoBehaviour
     private GameObject spawn;
     public GameObject desapear;
 
+    private void Start()
+    {
+        if (!statusM.showerAudio.isPlaying) statusM.showerAudio.Play();
+    }
+
     public void setStatus(StatusManager statusM, Status status)
     {
         this.statusM = statusM;
@@ -49,6 +54,8 @@ public class Choveiro : MonoBehaviour
     private void OnDestroy()
     {
         Instantiate(desapear, transform.position, transform.rotation);
+        statusM.showerAudio.Stop();
+        statusM.desapear.Play();
     }
 
     private void OnMouseDown()

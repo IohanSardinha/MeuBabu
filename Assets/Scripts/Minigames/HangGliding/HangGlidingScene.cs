@@ -15,7 +15,7 @@ public class HangGlidingScene : MonoBehaviour
     public bool playing = false, started = false, paused = false;
     Vector3 topRight, bottomRight, leftBorder;
     private float speed = 4;
-    private float time_between_counter = 0, time_between = 1.5f;
+    private float time_between_counter = 0, time_between = 1f;
     private float start_delay = 3f;
     public RepeatingBackground background, background2, background3, background4;
     public Text score_text, message_text, title_text;
@@ -46,7 +46,7 @@ public class HangGlidingScene : MonoBehaviour
         {
             AddObstacle();
             time_between_counter = 0;
-            time_between -= 0.01f; if (time_between <= 0.5) time_between = 0.5f;
+            time_between -= 0.005f; if (time_between <= 0.2) time_between = 0.2f;
         }
 
         foreach (GameObject obstacle in obstacles)
