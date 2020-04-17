@@ -12,14 +12,15 @@ public class KickUpScene : MonoBehaviour
     private float left_coords, right_coords, middle_coords;
     float width, height;
     float babu_width, babu_height;
-    public GameObject babu;
+    public GameObject babu, head;
     public float start_delay = 3f;
     private int score = 0;
     public Text score_text, message_text, title_text;
-    private bool playing = true, paused = false;
+    public bool playing = true, paused = false, started = false;
     public Status status;
     public GameObject game_over, pausePanel;
     public AudioSource ballhit;
+    private Animator animator;
 
     void Start()
     {
@@ -33,6 +34,8 @@ public class KickUpScene : MonoBehaviour
         size = babu.GetComponent<SpriteRenderer>().bounds.size;
         babu_width = size.x;
         babu_height = size.y;
+
+        animator = babu.GetComponent<Animator>();
     }
 
     void Update()
@@ -41,6 +44,11 @@ public class KickUpScene : MonoBehaviour
         {
             start_delay -= Time.deltaTime;
             return;
+        }
+        if(!started)
+        {
+            animator.SetBool("Started", true);
+            started = true;
         }
         if (playing && !paused)
         {
@@ -54,9 +62,31 @@ public class KickUpScene : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, velocity.x));
             if (transform.position.y + height / 2 > babu.transform.position.y - babu_height / 2)
             {
-                babu.transform.position = new Vector3(transform.position.x, babu.transform.position.y);
-                if (transform.position.x > middle_coords) babu.transform.localScale = new Vector3(0.5f, 0.5f, 1);
-                else babu.transform.localScale = new Vector3(-0.5f, 0.5f, 1);
+                if (transform.position.x > middle_coords)
+                {
+                    babu.transform.position = new Vector3(transform.position.x -0.4f, babu.transform.position.y);
+                    babu.transform.localScale = new Vector3(0.5f, 0.5f, 1);
+                    Vector3 diff = transform.position - head.transform.position;
+                    diff.Normalize();
+
+                    float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+                    head.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
+                    if (Mathf.Atan2(diff.y, diff.x) > 0.5) head.transform.rotation = Quaternion.Euler(0f, 0f, 0.5f * Mathf.Rad2Deg);
+                    if (Mathf.Atan2(diff.y, diff.x) < -0.5) head.transform.rotation = Quaternion.Euler(0f, 0f, -0.5f * Mathf.Rad2Deg);
+                }
+                else
+                {
+                    babu.transform.position = new Vector3(transform.position.x + 0.4f, babu.transform.position.y);
+                    babu.transform.localScale = new Vector3(-0.5f, 0.5f, 1);
+                    Vector3 diff = head.transform.position - transform.position;
+                    diff.Normalize();
+
+                    float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+                    head.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
+                    Debug.Log(Mathf.Atan2(diff.y, diff.x));
+                    if (Mathf.Atan2(diff.y, diff.x) < -0.5) head.transform.rotation = Quaternion.Euler(0f, 0f, -0.5f * Mathf.Rad2Deg);
+                    if (Mathf.Atan2(diff.y, diff.x) > 0.5) head.transform.rotation = Quaternion.Euler(0f, 0f, 0.5f * Mathf.Rad2Deg);
+                }
             }
             else
             {
@@ -94,8 +124,8 @@ public class KickUpScene : MonoBehaviour
 
     public void unpause()
     {
-        pausePanel.SetActive(false);
-        paused = false;
+        pausePanel.SetActive(!pausePanel.activeSelf);
+        paused = !paused;
     }
 
     public void returnHome()
@@ -123,6 +153,7 @@ public class KickUpScene : MonoBehaviour
             if (velocity.x < -MAX_X_VEL) velocity.x = -MAX_X_VEL;
             score++;
             score_text.text = score.ToString();
+            animator.SetBool("Kick", true);
         }
     }
 }

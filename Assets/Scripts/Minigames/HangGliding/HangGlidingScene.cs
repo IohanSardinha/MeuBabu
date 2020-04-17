@@ -105,9 +105,11 @@ public class HangGlidingScene : MonoBehaviour
 
     public void unpause()
     {
-        pausePanel.SetActive(false);
-        paused = false;
+        pausePanel.SetActive(!pausePanel.activeSelf);
+        paused = !paused;
+        if (paused) { background.speed = 0; background2.speed = 0; background3.speed = 0; background4.speed = 0; }
     }
+
 
     public void returnHome()
     {

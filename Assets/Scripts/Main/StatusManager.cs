@@ -15,6 +15,7 @@ public class StatusManager : MonoBehaviour
     private int food_count = 0;
     private float speechBoubleTime = 0;
     private bool speechBoubleShowing = false;
+    private bool closing = false;
 
     public Image energyImage,hygieneImage,hungerImage,happinessImage;
     public Status status;
@@ -24,7 +25,7 @@ public class StatusManager : MonoBehaviour
     public GameObject showerPrefab, showerSpawn;
     public GameObject foodPrefab, foodSpawn;
     public GameObject wardrobe;
-    public GameObject games;
+    public GameObject games, closingPanel;
     public GameObject speechBouble;
     public Text speechBoubleText;
     private GameObject shower;
@@ -90,6 +91,18 @@ public class StatusManager : MonoBehaviour
         choosing_game = false;
     }
 
+    public void closeClosingPanel()
+    {
+        closing = false;
+        closingPanel.SetActive(false);
+    }
+
+    public void closeApplication()
+    {
+        status.SaveFile();
+        Application.Quit();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -98,6 +111,11 @@ public class StatusManager : MonoBehaviour
             {
                 games.SetActive(false);
                 choosing_game = false;
+            }
+            else
+            {
+                closing = !closing;
+                closingPanel.SetActive(!closingPanel.activeSelf);
             }
         }
 

@@ -100,9 +100,9 @@ public class DanceHeroScene : MonoBehaviour
 
     public void unpause()
     {
-        pausePanel.SetActive(false);
-        paused = false;
-        dancer.enabled = true;
+        pausePanel.SetActive(!pausePanel.activeSelf);
+        paused = !paused;
+        dancer.enabled = !dancer.enabled;
     }
 
     // Update is called once per frame

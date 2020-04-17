@@ -46,8 +46,8 @@ public class MoleHoleScene : MonoBehaviour
 
     public void unpause()
     {
-        paused = false;
-        pausePanel.SetActive(false);
+        paused = !paused;
+        pausePanel.SetActive(!pausePanel.activeSelf);
     }
 
     private void Update()
