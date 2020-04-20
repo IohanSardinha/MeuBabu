@@ -17,6 +17,8 @@ public class Choveiro : MonoBehaviour
     private void Start()
     {
         if (!statusM.showerAudio.isPlaying) statusM.showerAudio.Play();
+        status.Skin = GameData.Skin.Underwear;
+        statusM.babu.GetComponent<Babu>().changeSkin();
     }
 
     public void setStatus(StatusManager statusM, Status status)
@@ -56,6 +58,8 @@ public class Choveiro : MonoBehaviour
         Instantiate(desapear, transform.position, transform.rotation);
         statusM.showerAudio.Stop();
         statusM.desapear.Play();
+        status.Skin = GameData.Skin.Towell;
+        statusM.babu.GetComponent<Babu>().changeSkin();
     }
 
     private void OnMouseDown()

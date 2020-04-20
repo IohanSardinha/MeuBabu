@@ -82,6 +82,7 @@ public class DanceHeroScene : MonoBehaviour
                             "\nMaior pontuação\n" + status.DanceScore.ToString();
                     }
                     status.rechargeHappines(score / 50);
+                    status.Skin = GameData.Skin.Red_shirt;
                 }
                 break;
             }

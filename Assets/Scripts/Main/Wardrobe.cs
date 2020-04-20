@@ -19,6 +19,11 @@ public class Wardrobe : MonoBehaviour
         changeSkin(0);
     }
 
+    private void OnEnable()
+    {
+        curr = skins.IndexOf(status.Skin);
+    }
+
     public void changeSkin(int n)
     {
         inactive_time = 0;

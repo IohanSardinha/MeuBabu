@@ -23,7 +23,7 @@ public class Babu : MonoBehaviour
 
     public void changeSkin()
     {
-        animator.SetInteger("Skin", wardrobe.skins.IndexOf(status.Skin));
         GetComponent<SpriteRenderer>().sprite = wardrobe.images[wardrobe.skins.IndexOf(status.Skin)];
+        animator.SetInteger("Skin", wardrobe.skins.IndexOf(status.Skin));
     }
 }

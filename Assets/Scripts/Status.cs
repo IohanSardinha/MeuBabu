@@ -22,7 +22,9 @@ public class Status : MonoBehaviour
     public int GlideScore { get => gameData.glide_score; set => gameData.glide_score= value; }
     public int DanceScore { get => gameData.dance_score; set => gameData.dance_score= value; }
     public int KickScore { get => gameData.kick_score; set => gameData.kick_score = value; }
-
+    public int WallObject { get => gameData.wall_object; set => gameData.wall_object = value; }
+    public int FloorObject { get => gameData.floor_object; set => gameData.floor_object= value; }
+    public int BackgroundColor { get => gameData.background_color; set => gameData.background_color = value; }
     public bool SFX { get => gameData.sfx; set => gameData.sfx = value; }
     public bool Music { get => gameData.music; set => gameData.music = value; }
     public float SFXVolume { get => gameData.sfx_volume; set => gameData.sfx_volume = value; }
@@ -30,6 +32,7 @@ public class Status : MonoBehaviour
     private void Awake()
     {
         gameData = new GameData();
+        
         LoadFile();
     }
 

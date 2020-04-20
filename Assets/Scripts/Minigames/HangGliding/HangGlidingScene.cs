@@ -95,6 +95,7 @@ public class HangGlidingScene : MonoBehaviour
             }
 
             status.rechargeHappines(score/5);
+            status.Skin = GameData.Skin.Glider;
         }
     }
 

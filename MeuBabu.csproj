@@ -612,6 +612,7 @@
     <Compile Include="Assets\Scripts\ImageFade.cs" />
     <Compile Include="Assets\Scripts\Loading.cs" />
     <Compile Include="Assets\Scripts\Main\Babu.cs" />
+    <Compile Include="Assets\Scripts\Main\ChangeHome.cs" />
     <Compile Include="Assets\Scripts\Main\Choveiro.cs" />
     <Compile Include="Assets\Scripts\Main\Food.cs" />
     <Compile Include="Assets\Scripts\Main\StatusManager.cs" />

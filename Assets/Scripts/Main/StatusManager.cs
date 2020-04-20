@@ -31,6 +31,7 @@ public class StatusManager : MonoBehaviour
     private GameObject shower;
     public AudioSource music, snoring;
     public AudioSource eating, sparkle, desapear, showerAudio;
+    private GameData.Skin oldSkin = GameData.Skin.Pijama;
 
     public int Food_count { get => food_count; set => food_count = value; }
     public bool Showering { get => showering; set => showering = value; }
@@ -206,7 +207,6 @@ public class StatusManager : MonoBehaviour
         }
         status.Sleeping = !status.Sleeping;
         lights.SetActive(!lights.activeSelf);
-        babu.GetComponent<Animator>().enabled = !babu.GetComponent<Animator>().enabled;
         disableWardrobe();
         if (status.Sleeping)
         {
@@ -220,6 +220,8 @@ public class StatusManager : MonoBehaviour
                 showering = false;
             }
             babu.transform.Rotate(0, 0, 80);
+            oldSkin = status.Skin;
+            status.Skin = GameData.Skin.Pijama;
             music.Pause();
             snoring.Play();
         }
@@ -228,8 +230,10 @@ public class StatusManager : MonoBehaviour
             music.UnPause();
             snoring.Stop();
             babu.transform.Rotate(0, 0, -80);
+            status.Skin = oldSkin;
         }
-
+        babu.GetComponent<Babu>().changeSkin();
+        babu.GetComponent<Animator>().enabled = !babu.GetComponent<Animator>().enabled;
         status.SaveFile();
 
     }

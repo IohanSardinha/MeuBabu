@@ -7,10 +7,13 @@ public class GameData
     public enum Skin
     {
         Underwear,
-        Shirt_and_shorts,
+        Red_shirt,
         Bunny,
         Glider,
-        Towell
+        Towell,
+        White_shirt,
+        Football,
+        Pijama
     };
 
     public float hunger;
@@ -28,6 +31,9 @@ public class GameData
     public bool music;
     public float sfx_volume;
     public float music_volume;
+    public int background_color;
+    public int floor_object;
+    public int wall_object;
 
     public GameData()
     {
@@ -46,6 +52,9 @@ public class GameData
         music = true;
         sfx_volume = 1;
         music_volume = 0.5f;
+        background_color = 0;
+        floor_object = 0;
+        wall_object = 0;
     }
 }
 

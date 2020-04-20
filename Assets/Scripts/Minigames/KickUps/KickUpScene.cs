@@ -110,6 +110,7 @@ public class KickUpScene : MonoBehaviour
                 }
 
                 status.rechargeHappines(score * 5);
+                status.Skin = GameData.Skin.Football;
             }
         }
         if(playing)
